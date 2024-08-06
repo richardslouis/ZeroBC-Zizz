@@ -1,0 +1,112 @@
+<html>
+    <head>
+			<title>0bc.xyz | URL Shortening</title>
+<meta name="title" content="0bc.xyz | URL Shortening"/>
+	<meta name="description" content="Best utility products from Doifoo to shorten URL, 0bc.xyz (Zero Bit Code). A Richiesoft subdivision which powers this across 12 platforms and multiple extensions."/>
+	<meta property="og:title" content="0bc.xyz | URL Shortening" />
+	<meta property="og:description" content="Best utility products from Doifoo to shorten URL, 0bc.xyz (Zero Bit Code). A Richiesoft subdivision which powers this across 12 platforms and multiple extensions." />
+	<meta property="og:site_name" content="0bc.xyz | URL Shortening" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
+	    <?php
+		//if ($_COOKIE['0bcxyz2100'] != "yes") { 
+        //setcookie("0bcxyz2100", "yes", time() + (86400 * 360));  
+        //header("Location: update.html"); 
+		//}
+		?>
+		
+		<script>
+		function getStylesheet() {
+   			 	//var currentTime = new Date().getHours();
+    			//if (0 <= currentTime&&currentTime < 4) {
+       			 //document.write("<link rel='stylesheet' href='../assets/css/night.css' type='text/css'>");
+    			//}
+    			//if (4 <= currentTime&&currentTime < 21) {
+        		document.write("<link rel='stylesheet' href='assets/css/main.css' type='text/css'>");
+    			//}
+    			//if (21 <= currentTime&&currentTime < 24) {
+        		//document.write("<link rel='stylesheet' href='../assets/css/night.css' type='text/css'>");
+    			//}
+				}
+			getStylesheet();
+		</script>
+
+		<noscript><link rel="stylesheet" href="assets/css/main.css" /></noscript>
+		
+		
+        <!--[if lte IE 9]>
+        <link rel="stylesheet" href="assets/css/ie9.css" />
+        <![endif]-->
+        <!--[if lte IE 8]>
+        <link rel="stylesheet" href="assets/css/ie8.css" />
+        <![endif]-->
+        <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+        </noscript>
+        <script src="js/jquery-1.11.3.min.js"></script>
+		
+		
+		<?php
+		//if ($_COOKIE['ccpad'] != "yes") { 
+        //setcookie("ccpad", "yes", time() + (100 * 1)); //(86400 * 30) 86400 = 1 day 
+        //header("Location: ad.php"); 
+		//}
+		?>
+		
+    </head>
+    <body> <!-- class="is-loading" onload="updateIndicator()" ononline="updateIndicator()" onoffline="updateIndicator()" -->
+        <!-- Wrapper -->
+        <div id="wrapper">
+            <!-- Main -->
+            <section id="main">
+			<p><span id="indicator"></span></p>
+                <header>
+                    <span class="avatar"><img src="images/avatar.png" alt="" /></span>
+					<h1>Zero-BC</h1>
+                    <h6>Link Shortening & Analytics<!-- | <font color="#E51288"><i><a href="http://l2.paperbooklet.com/app/app.php">Clipboard</a></i></font>--></h6><br>
+			<!-- Chrome and Mozilla | Safari -->
+		  	
+                </header>
+
+                <footer>
+                    <form method="post" >
+						
+
+                        <input type="text" name="UrlEntered" id="UrlEntered" onpaste="pastetext()" placeholder="Paste URL here" />
+					
+						<p id="textp"></p><br>
+						<!--<h6>Generated URL is<br>case sensitive</h6>-->
+						<h6>Generated URL is<br>case sensitive</h6>
+                    </form>
+                   <div id="button">
+                    <ul class="icons">
+                        <li><Strong>We are closed !</strong></li>
+						
+                    </ul>
+					</div>
+					
+					<div id="copy" style="display:none">
+					<ul class="icons">
+					<li><button onclick="copy('UrlEntered')"><b>Copy above link</b></button></li>
+					<li><button onclick="javascript:location.href='launch.php'">Try Another</button></li>
+					</ul>
+					</div>
+					
+					<!-- <font size='1'>Shorten to 0bcxyz.com | API &amp; Pro Stats</font> -->
+                    <div id="loading" style="display:none" ><img src="images/loader.gif" alt="" /></div>
+                </footer>
+            </section>
+            <!-- Footer -->
+            <footer id="footer">
+                <font color="black">
+               
+                </font>
+            </footer>
+        </div>
+        <!-- Scripts -->
+        <!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
+
+    </body>
+	
+</html>

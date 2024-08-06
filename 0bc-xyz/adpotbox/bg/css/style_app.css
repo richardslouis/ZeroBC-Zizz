@@ -1,0 +1,1131 @@
+@charset "utf-8";
+
+/*---------------------------------------------------------
+Theme Name: Mars | Multipurpose Parallax Error Pages
+Theme URL: http://grapestheme.com/mars
+Author: Grapestheme
+Author URI: http://themeforest.net/user/Grapestheme
+Description: Mars | Multipurpose Parallax Error Pages
+Version: 0.1.1
+License: ThemeForest Regular & Extended License
+License URI: http://themeforest.net/licenses/regular-extended
+---------------------------------------------------------*/
+
+/*
+  ---------------------------------------------------------
+              ++++++ TABLE of CONTENTS ++++++
+  ---------------------------------------------------------
+
+1)    Google Fonts
+2)    Reset and Setup
+3)    Typography 
+4)    Helper Class
+5)    Container
+6)    Button
+7)    Header Section
+8)    Footer Section
+9)    Content Section
+10)   Hero Background, Scene, Layer Setting
+11)   Responsive Media Query // Non-Mobile First Method
+
+---------------------------------------------------------*/
+
+/* ===================================
+     Google Fonts
+ ====================================== */
+ 
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+
+/* ===================================
+     Reset and Setup 
+ ====================================== */
+
+html,
+body {
+    height:100%;
+    min-height:100%;
+    -webkit-text-size-adjust:100%;
+    -webkit-tap-highlight-color:transparent;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+/* Reset Default Margin */
+a, abbr, acronym, address, applet, 
+big, blockquote, body, caption, 
+cite, code, dd, del, dfn, div, dl,
+dt, em, fieldset, form, h1, h2, h3,
+h4, h5, h6, html, iframe, img, ins, 
+kbd, label, legend, li, object, ol, 
+p, pre, q, s, samp, section, small, span, 
+strike, strong, sub, sup, table, 
+tbody, td, tfoot, th, thead, tr, tt, ul, var {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-weight:inherit;
+    font-style:inherit;
+    font-family:inherit;
+    font-size:100%;
+    vertical-align:baseline;
+}
+
+body {
+    font-family:'Montserrat', sans-serif;
+    font-size:16px;
+    line-height:1.4;
+    font-weight:400;
+    color:#191919;
+    background:#FFFFFF;
+    overflow:hidden;
+    z-index:1;
+}
+
+/* Link Setup */
+a,
+a:active {
+    color:#191919;
+    text-decoration:none;
+}
+
+a:hover,
+a:focus {
+    cursor:pointer;
+    color:#626262;
+    text-decoration:none;
+}
+
+a:focus {
+    outline:none !important;
+}
+
+/* Image Setup */
+img {
+    line-height:1 !important;
+    -webkit-backface-visibility:hidden;
+}
+
+
+/* Video Setup */
+video {
+    background-size:cover;
+    display:table-cell;
+    vertical-align:middle;
+    width:100%;
+}
+
+
+/* Form Elements Setup */
+input,
+textarea {
+    display:block;
+    width:100%;
+    max-width:100%;
+    padding:8px 15px;
+    font-family:'Montserrat', sans-serif;
+    font-size:14px;
+    letter-spacing:1px;
+    color:#191919;
+    background-color:transparent;
+    border:0;
+    border-bottom:2px dashed #626262;
+    margin:0 0 30px 0;
+    resize:none;
+}
+
+input[type="submit"] {
+    width:auto;
+}
+
+input[type="button"],
+input[type="text"],
+input[type="email"],
+textarea,
+input[type="submit"] {
+    -webkit-appearance:none;
+    border-radius:0;
+}
+
+input:focus,
+textarea:focus {
+    border:0;
+    border-bottom:2px solid #191919;
+    outline:none;
+}
+
+input[type="submit"]:focus {
+    border:none !important;
+    outline:none;
+}
+
+iframe {
+    border:0;
+}
+
+/* List Setup */
+ul {
+    list-style:none outside none;
+}
+
+ul,
+ol,
+dl {
+    list-style-position:outside;
+}
+
+/* Section Setup */
+section {
+    position:absolute;
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+/* SVG Setup */
+svg:not(:root) {
+    overflow:hidden;
+}
+
+/* ===================================
+    Typography
+====================================== */
+
+/* ======= Style For Heading And Paragraph Tag ======= */
+h1,h2,h3,h4 {
+    font-weight:inherit;
+    line-height:1.2;
+}
+
+h1 {
+    margin-top:0;
+    font-size:3.998em;
+}
+
+h2 {
+    font-size:2.827em;
+}
+
+h3 {
+    font-size:1.999em;
+}
+
+h4 {
+    font-size:1.414em;
+}
+
+p {
+    margin-bottom:1.3em;
+}
+
+small, .copy {
+    font-size:0.750em;
+}
+
+/* ======= Main Font  ======= */
+.main-font {
+    font-family:'Montserrat', sans-serif !important;
+}
+
+/* ======= Helper Class For Text (Font-weight) ======= */
+.font-weight-300 {
+    font-weight:300 !important;
+}
+
+.font-weight-400 {
+    font-weight:400 !important;
+}
+
+.font-weight-500 {
+    font-weight:500 !important;
+}
+
+.font-weight-600 {
+    font-weight:600 !important;
+}
+
+.font-weight-700 {
+    font-weight:700 !important;
+}
+
+.italic{
+    font-style:italic !important;
+}
+
+/* ===================================
+    Container
+====================================== */
+
+/*======= Bootstrap Container ======= */
+.container {
+    padding-right:15px;
+    padding-left:15px;
+    margin-right:auto;
+    margin-left:auto;
+}
+
+.container:before, .container:after {
+    content:" ";
+    display:table; 
+}
+
+.container:after {
+    clear:both; 
+}
+
+@media (min-width:768px) {
+    .container {
+        width:732px;
+    }
+}
+ 
+@media (min-width:992px) {
+    .container {
+        width:952px;
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        width:1152px;
+    }
+}
+
+/* ===================================
+    Button
+====================================== */
+
+/*======= Style For Button ======= */
+.btn {
+    display:inline-block;
+    padding:7px 25px;
+    font-size:0.875em;
+    font-weight:700;
+    color:#FFFFFF;
+    text-transform:capitalize;
+    background:#191919;
+    border:2px solid #191919;
+    border-radius:30px 30px;
+    -webkit-box-shadow:0 0 10px rgba(51, 60, 78, 0.1);
+    -ms-box-shadow:0 0 10px rgba(51, 60, 78, 0.1);
+    box-shadow:0 0 10px rgba(51, 60, 78, 0.1);
+    -webkit-transition:background 300ms ease,color 300ms ease 00ms;
+    -khtml-transition:background 300ms ease 00ms,color 300ms ease 00ms;
+    -moz-transition:background 300ms ease 00ms,color 300ms ease 00ms;
+    -ms-transition:background 300ms ease 00ms,color 300ms ease 00ms;
+    -o-transition:background 300ms ease 00ms,color 300ms ease 00ms;
+    transition:background 300ms ease,color 300ms ease 00ms;
+}
+
+.btn-dark {
+    color:#FFFFFF;
+    background:#191919;
+    border:2px solid #191919;
+}
+
+.btn-light {
+    color:#FFFFFF;
+    background:transparent;
+    border:2px solid #FFFFFF;
+}
+
+/* ======= Style For Button Active, Hover And Focus ======= */
+.btn-dark:focus,
+.btn-dark:hover,
+.btn-dark:active {
+    color:#191919;
+    background:transparent;
+    outline:none;
+    -webkit-transition:background 300ms ease,color 300ms ease 00ms;
+    -khtml-transition:background 300ms ease 00ms,color 300ms ease 00ms;
+    -moz-transition:background 300ms ease 00ms,color 300ms ease 00ms;
+    -ms-transition:background 300ms ease 00ms,color 300ms ease 00ms;
+    -o-transition:background 300ms ease 00ms,color 300ms ease 00ms;
+    transition:background 300ms ease,color 300ms ease 00ms;
+}
+
+.btn-light:focus,
+.btn-light:hover,
+.btn-light:active {
+    color:#191919;
+    background:#FFFFFF;
+    outline:none;
+    -webkit-transition:background 300ms ease,color 300ms ease 00ms;
+    -khtml-transition:background 300ms ease 00ms,color 300ms ease 00ms;
+    -moz-transition:background 300ms ease 00ms,color 300ms ease 00ms;
+    -ms-transition:background 300ms ease 00ms,color 300ms ease 00ms;
+    -o-transition:background 300ms ease 00ms,color 300ms ease 00ms;
+    transition:background 300ms ease,color 300ms ease 00ms;
+}
+
+/* ======= Style For Button Shape ======= */
+.btn-rectangle {
+    border-radius:0;
+}
+
+.btn-rounded-corner {
+    border-radius:4px 4px;
+}
+
+.btn-rounded-rectangle {
+    border-radius:30px 30px;
+}
+
+/* ===================================
+    Header Section
+====================================== */
+
+.header{
+    position:absolute;
+    display:block;
+    width:100%;
+    height:60px;
+    z-index:9999;
+}
+
+.header .logo-container {
+    position:relative;
+    display:block;
+    line-height:0;
+    margin:20px 0;
+    float:left;
+}
+
+.header .logo-container .logo {
+    width:90px;
+    height:22px;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+/* ===================================
+    Footer Section
+====================================== */
+
+.copy {
+    position:absolute;
+    display:block;
+    bottom:20px;
+    width:100%;
+    color:#FFFFFF;
+    text-align:center;
+    margin:0;
+}
+
+/* ===================================
+    Content Section
+====================================== */
+
+.main_content {
+    display:block;
+    text-align:center;
+}
+
+.error-big-text {
+    position:relative;
+    font-size:8.500em;
+    color:#FFFFFF;
+    text-align:center;
+    text-transform:uppercase;
+}
+
+.error-sub-text {
+    position:relative;
+    font-size:1.000em;
+    color:#FFFFFF;
+    text-align:center;
+    text-transform:capitalize;
+}
+
+
+/* ===================================
+  Hero Background, Scene, Layer Setting
+====================================== */
+
+/* ======= Style For Background ======= */
+.hero-background {
+    position:absolute;
+    display:block;
+    bottom:-30px;
+    width:110%;
+    left:-5%;
+    top:-5%;
+    background:#EEEFF1 url('../images/app/flat-app-bg.jpg') no-repeat 50% 100%;
+    background-position:center center;
+    -ms-background-size:cover;
+    background-size:cover;
+}
+
+
+/* ======= Style For Scene ======= */
+.scene {
+    position:relative;
+    overflow:hidden;
+    display:block;
+    height:100%;
+    width:100%;
+    padding:0;
+    margin:0;
+}
+
+/*======= Style For Layer ======= */
+.layer {
+    position:absolute;
+    display:block;
+    height:100%;
+    width:100%;
+    padding:0;
+    margin:0;
+    -webkit-backface-visibility:hidden;
+    -khtml-backface-visibility:hidden;
+    -moz-backface-visibility:hidden;
+    -ms-backface-visibility:hidden;
+    -o-backface-visibility:hidden;
+    -webkit-transform:translate3d(0, 0, 0);
+    -khtml-transform:translate3d(0, 0, 0);
+    -moz-transform:translate3d(0, 0, 0);
+    -ms-transform:translate3d(0, 0, 0);
+    -o-transform:translate3d(0, 0, 0);
+    transform:translate3d(0, 0, 0);
+}
+
+/*======= Style For Layer Img Scale ======= */
+.level-3 img,.level-2 img,.level-1 img {
+    -webkit-transform:scale(0.6,0.6);
+    -moz-transform:scale(0.6,0.6);
+    -ms-transform:scale(0.6,0.6);
+    transform:scale(0.6);
+}
+
+.level-3,.level-2,.level-1 {
+    position:absolute;
+    display:block;
+}
+
+.level-1{
+    -webkit-animation: rotate 10s 0.1s infinite linear;
+    -moz-animation: rotate 10s 0.1s infinite linear;
+    -ms-animation: rotate 10s 0.1s infinite linear;
+    animation: rotate 10s 0.1s infinite linear;
+}
+.level-2{
+    -webkit-animation: rotate 15s 0.1s infinite linear;
+    -moz-animation: rotate 15s 0.1s infinite linear;
+    -ms-animation: rotate 15s 0.1s infinite linear;
+    animation: rotate 15s 0.1s infinite linear;
+}
+.level-3{
+    -webkit-animation: rotate 12s 0.1s infinite linear;
+    -moz-animation: rotate 12s 0.1s infinite linear;
+    -ms-animation: rotate 12s 0.1s infinite linear;
+    animation: rotate 12s 0.1s infinite linear;
+}
+
+/*======= Object Positioning For Level-1 ======= */
+.level-1.object-1 {
+    right:410px;
+    bottom:130px;
+}
+.level-1.object-2 {
+    left:380px;
+    top:100px;
+}
+.level-1.object-3 {
+    left:70px;
+    bottom:120px;
+}
+.level-1.object-4 {
+    left:-20px;
+    bottom:-80px;
+}
+
+/*======= Object Positioning For Level-2 ======= */
+
+.level-2.object-1 {
+    right:100px;
+    bottom:10px;
+}
+.level-2.object-2 {
+    right:210px;
+    top:-100px;
+}
+.level-2.object-3 {
+    right:200px;
+    top:220px;
+}
+
+/*======= Object Positioning For Level-3 ======= */
+.level-3.object-1 {
+    left:300px;
+    bottom:-80px;
+}
+.level-3.object-2 {
+    left:-210px;
+    top:0;
+}
+.level-3.object-3 {
+    right:-120px;
+    top:50%;
+    -webkit-transform:translateY(-50%);
+    -moz-transform:translateY(-50%);
+    -ms-transform:translateY(-50%);
+    transform:translateY(-50%);
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0,10%,0) rotateZ(0deg);
+    transform: rotateZ(0deg) translate3d(0,10%,0) rotateZ(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotateZ(360deg) translate3d(0,10%,0) rotateZ(-360deg);
+    transform: rotateZ(360deg) translate3d(0,10%,0) rotateZ(-360deg);
+  }
+}
+
+@-moz-keyframes rotate {
+  0% {
+    -moz-transform: rotateZ(0deg) translate3d(0,10%,0) rotateZ(0deg);
+    transform: rotateZ(0deg) translate3d(0,10%,0) rotateZ(0deg);
+  }
+
+  100% {
+    -moz-transform: rotateZ(360deg) translate3d(0,10%,0) rotateZ(-360deg);
+    transform: rotateZ(360deg) translate3d(0,10%,0) rotateZ(-360deg);
+  }
+}
+
+@-ms-keyframes rotate {
+  0% {
+    -ms-transform: rotateZ(0deg) translate3d(0,10%,0) rotateZ(0deg);
+    transform: rotateZ(0deg) translate3d(0,10%,0) rotateZ(0deg);
+  }
+
+  100% {
+    -ms-transform: rotateZ(360deg) translate3d(0,10%,0) rotateZ(-360deg);
+    transform: rotateZ(360deg) translate3d(0,10%,0) rotateZ(-360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0,10%,0) rotateZ(0deg);
+    -moz-transform: rotateZ(0deg) translate3d(0,10%,0) rotateZ(0deg);
+    -ms-transform: rotateZ(0deg) translate3d(0,10%,0) rotateZ(0deg);
+    transform: rotateZ(0deg) translate3d(0,10%,0) rotateZ(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotateZ(360deg) translate3d(0,10%,0) rotateZ(-360deg);
+    -moz-transform: rotateZ(360deg) translate3d(0,10%,0) rotateZ(-360deg);
+    -ms-transform: rotateZ(360deg) translate3d(0,10%,0) rotateZ(-360deg);
+    transform: rotateZ(360deg) translate3d(0,10%,0) rotateZ(-360deg);
+  }
+}
+
+/* ===================================
+    Responsive Media Query // Non-Mobile First Method
+====================================== */
+
+/*==========  Extra Large Desktop ==========*/
+@media only screen and (min-width:1920px) {
+
+/* ===================================
+    Content Section
+====================================== */
+    .error-big-text {
+        font-size:9.750em;
+    }   
+    .error-sub-text {
+        font-size:1.250em;
+    }
+
+/*======= Style For Layer Img Scale ======= */
+    .level-3 img,.level-2 img,.level-1 img {
+        -webkit-transform:scale(1.0);
+        -moz-transform:scale(1.0);
+        -ms-transform:scale(1.0,1.0);
+        transform:scale(1.0);
+    }
+
+/*======= Object Positioning For Level-1 ======= */
+	.level-1.object-1 {
+	    right:550px;
+	    bottom:300px;
+	}
+    .level-1.object-2 {
+	    left:600px;
+	    top:200px;
+	}
+	.level-1.object-3 {
+	    left:150px;
+	    bottom:200px;
+	}
+	.level-1.object-4 {
+	    left:100px;
+	    bottom:-60px;
+	}
+
+/*======= Object Positioning For Level-2 ======= */
+	.level-2.object-1 {
+	    right:200px;
+	    bottom:100px;
+	}
+	.level-2.object-2 {
+	    right:350px;
+	    top:-50px;
+	}
+	.level-2.object-3 {
+	    right:300px;
+	    top:350px;
+	}
+
+/*======= Object Positioning For Level-3 ======= */
+	.level-3.object-1 {
+	    left:550px;
+	    bottom:-50px;
+	}
+	.level-3.object-2 {
+	    left:-180px;
+	    top:250px;
+	}
+}
+/*==========  Extra Large Desktop ==========*/
+@media only screen and (min-width:1400px) and (max-width:1919px) {
+
+/* ===================================
+    Content Section
+====================================== */
+    .error-big-text {
+        font-size:9.750em;
+    }   
+    .error-sub-text {
+        font-size:1.250em;
+    }
+
+/*======= Style For Layer Img Scale ======= */
+    .level-3 img,.level-2 img,.level-1 img {
+        -webkit-transform:scale(1.0);
+        -moz-transform:scale(1.0);
+        -ms-transform:scale(1.0,1.0);
+        transform:scale(1.0);
+    }
+
+/*======= Object Positioning For Level-1 ======= */
+	.level-1.object-1 {
+	    right:400px;
+	    bottom:200px;
+	}
+    .level-1.object-2 {
+	    left:500px;
+	    top:200px;
+	}
+	.level-1.object-3 {
+	    left:150px;
+	    bottom:200px;
+	}
+	.level-1.object-4 {
+	    left:0px;
+	    bottom:-60px;
+	}
+
+/*======= Object Positioning For Level-2 ======= */
+	.level-2.object-1 {
+	    right:200px;
+	    bottom:50px;
+	}
+	.level-2.object-2 {
+	    right:350px;
+	    top:-50px;
+	}
+	.level-2.object-3 {
+	    right:300px;
+	    top:350px;
+	}
+
+/*======= Object Positioning For Level-3 ======= */
+	.level-3.object-1 {
+	    left:400px;
+	    bottom:-50px;
+	}
+	.level-3.object-2 {
+	    left:-200px;
+	    top:140px;
+	}
+}
+
+/*==========  Desktop And Tablet ==========*/
+@media (min-width:1024px) and (max-width:1199px) { 
+
+/*======= Object Positioning For Level-1 ======= */
+    .level-1.object-1 {
+	    right:300px;
+	    bottom:150px;
+	}
+
+/*======= Object Positioning For Level-2 ======= */
+	.level-2.object-2 {
+	    right:150px;
+	}
+	.level-2.object-3 {
+	    right:120px;
+	}
+
+/*======= Object Positioning For Level-3 ======= */
+	.level-3.object-1 {
+    	left:300px;
+    }
+    .level-3.object-2 {
+	    top:30px;
+	}
+}
+
+/*==========  Mobile And Tablet  ==========*/
+@media (min-width:992px) and (max-width:1023px) {
+
+/*======= Object Positioning For Level-1 ======= */
+    .level-1.object-1 {
+	    right:250px;
+	    bottom:100px;
+	}
+
+/*======= Object Positioning For Level-2 ======= */
+	.level-2.object-1 {
+	    right:50px;
+	}
+	.level-2.object-2 {
+	    right:150px;
+	}
+	.level-2.object-3 {
+	    right:120px;
+	}
+
+/*======= Object Positioning For Level-3 ======= */
+	.level-3.object-1 {
+    	left:300px;
+    }
+    .level-3.object-2 {
+	    top:30px;
+	}
+
+}
+
+/*==========  Mobile And Tablet  ==========*/
+@media (min-width:768px) and (max-width:991px) {
+
+/*======= Object Positioning For Level-1 ======= */
+    .level-1.object-1 {
+	    right:250px;
+	    bottom:250px;
+	}
+	.level-1.object-2 {
+	    left:250px;
+	}
+	.level-1.object-3 {
+	    left:50px;
+	    bottom:170px;
+	}
+	.level-1.object-4 {
+	    left:-80px;
+	}
+
+/*======= Object Positioning For Level-2 ======= */
+	.level-2.object-1 {
+	    right:50px;
+	}
+	.level-2.object-2 {
+	    right:80px;
+	}
+	.level-2.object-3 {
+	    right:120px;
+	    top:400px;
+	}
+
+/*======= Object Positioning For Level-3 ======= */
+	.level-3.object-1 {
+    	left:300px;
+    }
+    .level-3.object-2 {
+	    top:30px;
+	}
+
+}
+
+/*==========  Mobile  ==========*/
+@media (min-width:640px) and (max-width:767px) {
+
+/* ===================================
+    Content Section
+====================================== */
+    .error-big-text {
+        font-size:7.750em;
+    }
+
+/*======= Object Positioning For Level-1 ======= */
+    .level-1.object-1 {
+	    right:250px;
+	    bottom:250px;
+	}
+	.level-1.object-2 {
+	    left:250px;
+	}
+	.level-1.object-3 {
+	    left:50px;
+	    bottom:170px;
+	}
+	.level-1.object-4 {
+	    left:-80px;
+	}
+
+/*======= Object Positioning For Level-2 ======= */
+	.level-2.object-1 {
+	    display:none;
+	}
+	.level-2.object-2 {
+	    right:80px;
+	}
+	.level-2.object-3 {
+	    right:120px;
+	    top:400px;
+	}
+
+/*======= Object Positioning For Level-3 ======= */
+	.level-3.object-1 {
+    	left:300px;
+    }
+    .level-3.object-2 {
+	    top:30px;
+	}
+}
+
+
+@media (min-width:480px) and (max-width:639px) {
+
+/* ===================================
+    Content Section
+====================================== */
+    .error-big-text {
+        font-size:7.750em;
+    }
+
+/*======= Style For Layer Img Scale ======= */
+    .level-3 img,.level-2 img,.level-1 img {
+        -webkit-transform:scale(0.5);
+        -moz-transform:scale(0.5);
+        -ms-transform:scale(0.5,0.5);
+        transform:scale(0.5);
+    }
+
+
+/*======= Object Positioning For Level-1 ======= */
+    .level-1.object-1 {
+    	right:100px;
+	}
+	.level-1.object-2 {
+		left:160px;
+	}
+	.level-1.object-3 {
+		left:40px;
+	}
+	.level-1.object-4 {
+		left:-80px;
+	}
+
+/*======= Object Positioning For Level-2 ======= */
+	.level-2.object-1 {
+		display:none;
+	}
+	.level-2.object-2 {
+	    right:10px;
+	}
+	.level-2.object-3 {
+	    right:100px;
+	}
+
+/*======= Object Positioning For Level-3 ======= */
+	.level-3.object-1 {
+	    left:200px;
+    }
+	.level-3.object-2 {
+		right:-170px;
+	}
+	
+ }
+
+
+/*==========  Mobile  ==========*/
+@media (min-width:360px) and (max-width:479px) {
+
+/* ===================================
+    Content Section
+====================================== */
+    .error-big-text {
+        font-size:6.750em;
+    } 
+
+/*======= Style For Layer Img Scale ======= */
+    .level-3 img,.level-2 img,.level-1 img {
+        -webkit-transform:scale(0.4);
+        -moz-transform:scale(0.4);
+        -ms-transform:scale(0.4,0.4);
+        transform:scale(0.4);
+    }
+
+/*======= Object Positioning For Level-1 ======= */
+    .level-1.object-1 {
+    	right:70px;
+	}
+	.level-1.object-2 {
+		left:130px;
+	}
+	.level-1.object-3 {
+		left:40px;
+	}
+	.level-1.object-4 {
+		left:-80px;
+		bottom:-100px;
+	}
+
+/*======= Object Positioning For Level-2 ======= */
+	.level-2.object-1 {
+		display:none;
+	}
+	.level-2.object-2 {
+	    right:-30px;
+	}
+	.level-2.object-3 {
+	    right:70px;
+	    top:200px;
+	}
+
+/*======= Object Positioning For Level-3 ======= */
+	.level-3.object-1 {
+	    left:170px;
+	    bottom:-100px;
+    }
+	.level-3.object-2 {
+		right:-170px;
+	}
+	.level-3.object-3 {
+		right:-190px;
+	}
+	
+}
+
+/*==========  Mobile  ==========*/
+@media (min-width:320px) and (max-width:359px) {
+
+/* ===================================
+    Content Section
+====================================== */
+    .error-big-text {
+        font-size:6.750em;
+    } 
+
+/*======= Style For Layer Img Scale ======= */
+    .level-3 img,.level-2 img,.level-1 img {
+        -webkit-transform:scale(0.4);
+        -moz-transform:scale(0.4);
+        -ms-transform:scale(0.4,0.4);
+        transform:scale(0.4);
+    }
+
+/*======= Object Positioning For Level-1 ======= */
+    .level-1.object-1 {
+    	right:40px;
+	}
+	.level-1.object-2 {
+		left:130px;
+	}
+	.level-1.object-3 {
+		left:40px;
+	}
+	.level-1.object-4 {
+		left:-100px;
+		bottom:-100px;
+	}
+
+/*======= Object Positioning For Level-2 ======= */
+	.level-2.object-1 {
+		display:none;
+	}
+	.level-2.object-2 {
+	    right:-50px;
+	}
+	.level-2.object-3 {
+	    display:none;
+	}
+
+/*======= Object Positioning For Level-3 ======= */
+	.level-3.object-1 {
+	    left:140px;
+	    bottom:-100px;
+    }
+	.level-3.object-2 {
+		right:-170px;
+	}
+	.level-3.object-3 {
+		right:-200px;
+	}
+}
+
+/*==========  Low Screen Size Mobile  ==========*/
+@media (max-width:319px) {
+
+/* ===================================
+    Content Section
+====================================== */
+    .error-big-text {
+        font-size:6.750em;
+    } 
+
+/*======= Style For Layer Img Scale ======= */
+    .level-3 img,.level-2 img,.level-1 img {
+        -webkit-transform:scale(0.4);
+        -moz-transform:scale(0.4);
+        -ms-transform:scale(0.4,0.4);
+        transform:scale(0.4);
+    }
+
+/*======= Object Positioning For Level-1 ======= */
+    .level-1.object-1 {
+    	right:40px;
+	}
+	.level-1.object-2 {
+		left:130px;
+	}
+	.level-1.object-3 {
+		left:40px;
+	}
+	.level-1.object-4 {
+		left:-100px;
+		bottom:-100px;
+	}
+
+/*======= Object Positioning For Level-2 ======= */
+	.level-2.object-1 {
+		display:none;
+	}
+	.level-2.object-2 {
+	    right:-50px;
+	}
+	.level-2.object-3 {
+	    display:none;
+	}
+
+/*======= Object Positioning For Level-3 ======= */
+	.level-3.object-1 {
+	    left:140px;
+	    bottom:-100px;
+    }
+	.level-3.object-2 {
+		right:-170px;
+	}
+	.level-3.object-3 {
+		right:-200px;
+	}
+}

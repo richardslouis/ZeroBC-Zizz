@@ -1,0 +1,181 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project:	Svg 404
+Version:	1.0
+Last change:	10/04/17
+
+-------------------------------------------------------------------
+[Layout]
+
+* body
+	+ Section / #animation
+    - div / #404 / .anim-icon
+	+ Section / #info
+		- h1
+		- p
+  + Section / #data
+    - div / .data
+      - div / .search
+       - input
+       - button
+      - div / .go-home
+       - a
+-------------------------------------------------------------------
+[Typography]
+
+  Body:		Helvetica CY, Nimbus Sans L, Arial, sans-serif;
+  H1: 2em;
+  p: 1em;
+
+-------------------------------------------------------------------
+[Color codes]
+
+a (standart): #389e79
+a (hover): #2e6c56
+
+button (standart): #389e79
+button (hover): #2e6c56
+
+-------------------------------------------------------------------
+[Resize animation]
+
+To change the size find class .anim-icon and edit parameter "height"
+
+-------------------------------------------------------------------*/
+
+body, html {
+    font-family: "Helvetica CY", "Nimbus Sans L", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+h1 {
+    font-size: 2em;
+    margin: .5em .3em;
+    text-align: center;
+}
+
+p {
+    font-size: 1em;
+    margin: .5em .3em;
+    text-align: center;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+}
+
+button {
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    background: #389e79;
+    color: #ffffff;
+    border: 0;
+    padding: 13px 15px;
+    font-size: 28px;
+    max-width: 320px;
+    -webkit-transition: background 0.5s ease 0s;
+    transition: background 0.5s ease 0s;
+}
+
+button:hover {
+    background: #2e6c56;
+}
+
+input {
+    -webkit-appearance: none;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding: 13px 15px;
+    min-width: 380px;
+}
+
+input:focus, button:focus {
+    -webkit-appearance: none;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border-color: #ffffff;
+}
+
+a {
+    margin: 5em 0;
+    color: #389e79;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #2e6c56;
+}
+
+.search {
+    font-size: 12px;
+    margin: 2.5em auto;
+}
+
+.search button {
+    padding: 13px 15px;
+    margin: 0;
+    font-size: 14px;
+    margin-left: .3em;
+}
+
+.data {
+    text-align: center;
+    margin: .5em .5em;
+}
+
+/* Here you can change the size of the animation. Change the parameter height. */
+.anim-icon {
+    width: 100%;
+    height: 50vh; /* size is relative to screen size */
+    border: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.anim-icon:focus {
+    background: #fff !important;
+    outline: none !important;
+}
+
+/* Here you can change the size for mobile screens */
+@media (max-width: 1080px) {
+    .anim-icon {
+        height: 45vmax; /* size is relative to screen size */
+    }
+}
+
+/* Tablet */
+
+@media (max-width: 799px) {
+    .anim-icon {
+        height: 50vmax; /* size is relative to screen size */
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 520px) {
+    h1 {
+        font-size: 1.4em;
+    }
+    input {
+        min-width: 220px;
+    }
+    .anim-icon {
+        margin: 1rem auto;
+        margin-top: 2.5rem;
+        height: 40vmax; /* size is relative to screen size */
+    }
+}
